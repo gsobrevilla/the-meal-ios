@@ -10,12 +10,9 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let vc = MealsListViewController.instantiateFromStoryboard()
-        navigationController?.pushViewController(vc, animated: true)
+        MealsRouter.navigateToMealsList(from: self)
     }
 }
 

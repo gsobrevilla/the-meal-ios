@@ -10,46 +10,34 @@ import Foundation
 import UIKit
 
 protocol MealsListPresenterProtocol {
+    
     func fetchInitialData()
     func fetchDataWithSearch(query: String)
 }
 
 class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     
+    // MARK: Static Properties
+    
     static var appStoryboard: AppStoryboard = .meals
+    
+    // MARK: - Outlets
     
     @IBOutlet private var searchBar: UISearchBar?
     @IBOutlet private var tableView: UITableView?
     
-    private var presenter: MealsListPresenterProtocol?
+    // MARK: - Properties
     
-    private var items: [MealsListItemViewModel] = [
-        MealsListItemViewModel(
-            pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-            name: "Corba",
-            category: "Side"
-        ),
-        MealsListItemViewModel(
-            pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-            name: "Corba",
-            category: "Side"
-        ),
-        MealsListItemViewModel(
-            pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-            name: "Corba",
-            category: "Side"
-        ),
-        MealsListItemViewModel(
-            pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-            name: "Corba https://www.themea https://www.themea  https://www.themea https://www.themea ",
-            category: "Side https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea"
-        )
-    ]
+    var presenter: MealsListPresenterProtocol?
     
-    private var searchDelay: TimeInterval = 0.3
+    private var items: [MealsListItemViewModel] = [] {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    
+    private var searchDelay: TimeInterval = 0.2
     private var searchTimer: Timer?
-    
-    
     
     // MARK: - Callbacks
     
@@ -99,6 +87,8 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     }
 }
 
+// MARK: - UISearchBarDelegate
+
 extension MealsListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -109,6 +99,8 @@ extension MealsListViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -130,5 +122,14 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - MealsListViewProtocol
+
+extension MealsListViewController: MealsListViewProtocol {
+    
+    func updateList(items: [MealsListItemViewModel]) {
+        self.items = items
     }
 }
