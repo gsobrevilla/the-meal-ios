@@ -1,0 +1,6 @@
+framework module Pods_TheMeal {
+  umbrella header "Pods-TheMeal-umbrella.h"
+
+  export *
+  module * { export * }
+}
