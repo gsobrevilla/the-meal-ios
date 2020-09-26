@@ -8,10 +8,16 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 extension UIImageView {
     
-    func loadFrom(url: String?) {
-        // TODO: implement this!
+    func loadFrom(url urlString: String?) {
+        guard let urlStringUnwrapped = urlString, let url = URL(string: urlStringUnwrapped) else {
+            self.image = nil
+            return
+        }
+        
+        self.kf.setImage(with: url)
     }
 }

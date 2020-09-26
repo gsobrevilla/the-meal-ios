@@ -6,6 +6,7 @@ target 'TheMeal' do
   use_frameworks!
 
   # Pods for TheMeal
+  pod 'Kingfisher'
 
   target 'TheMealTests' do
     inherit! :search_paths
