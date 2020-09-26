@@ -37,6 +37,8 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
         }
     }
     
+    private var loadingOverlay = LoadingOverlay()
+    
     // MARK: - Callbacks
     
     override func viewDidLoad() {
@@ -47,6 +49,7 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadingOverlay.show(over: view)
         presenter?.fetchInitialData()
     }
     
@@ -93,9 +96,11 @@ extension MealDetailsViewController: MealDetailsViewProtocol  {
     
     func updateView(viewModel: MealDetailsViewModel) {
         self.viewModel = viewModel
+        loadingOverlay.hide()
     }
     
     func showDataFetchError(_ message: String) {
+        loadingOverlay.hide()
         showOkDialog(title: "", message: message)
     }
 }

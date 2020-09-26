@@ -19,31 +19,44 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-kf-hxZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk8-nX-Y0e">
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-kf-hxZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NBq-kf-hxZ" secondAttribute="trailing" id="2DX-ZD-FIO"/>
+                                    <constraint firstItem="NBq-kf-hxZ" firstAttribute="leading" secondItem="fk8-nX-Y0e" secondAttribute="leading" id="7pP-QL-Kn4"/>
+                                    <constraint firstItem="NBq-kf-hxZ" firstAttribute="top" secondItem="fk8-nX-Y0e" secondAttribute="top" id="Iwl-Df-6N8"/>
+                                    <constraint firstAttribute="bottom" secondItem="NBq-kf-hxZ" secondAttribute="bottom" id="ZgK-DN-5vK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fk8-nX-Y0e" firstAttribute="leading" secondItem="zgN-jg-9Mi" secondAttribute="leading" id="8BW-Lx-CJW"/>
+                            <constraint firstItem="fk8-nX-Y0e" firstAttribute="top" secondItem="E0A-6A-42h" secondAttribute="bottom" id="Ril-5O-kL4"/>
+                            <constraint firstItem="zgN-jg-9Mi" firstAttribute="trailing" secondItem="fk8-nX-Y0e" secondAttribute="trailing" id="UJQ-jn-QHI"/>
                             <constraint firstItem="E0A-6A-42h" firstAttribute="trailing" secondItem="zgN-jg-9Mi" secondAttribute="trailing" id="UQu-v6-1tn"/>
                             <constraint firstItem="E0A-6A-42h" firstAttribute="top" secondItem="zgN-jg-9Mi" secondAttribute="top" id="WaC-QX-mSG"/>
-                            <constraint firstItem="zgN-jg-9Mi" firstAttribute="bottom" secondItem="NBq-kf-hxZ" secondAttribute="bottom" id="ZtI-cS-gSh"/>
-                            <constraint firstItem="zgN-jg-9Mi" firstAttribute="trailing" secondItem="NBq-kf-hxZ" secondAttribute="trailing" id="fJg-L1-3E3"/>
-                            <constraint firstItem="NBq-kf-hxZ" firstAttribute="leading" secondItem="zgN-jg-9Mi" secondAttribute="leading" id="giE-F1-QFD"/>
                             <constraint firstItem="E0A-6A-42h" firstAttribute="leading" secondItem="zgN-jg-9Mi" secondAttribute="leading" id="oMP-Wk-mLy"/>
-                            <constraint firstItem="NBq-kf-hxZ" firstAttribute="top" secondItem="E0A-6A-42h" secondAttribute="bottom" id="pIX-bC-Tfu"/>
+                            <constraint firstItem="zgN-jg-9Mi" firstAttribute="bottom" secondItem="fk8-nX-Y0e" secondAttribute="bottom" id="tGv-F2-Rde"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zgN-jg-9Mi"/>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="E0A-6A-42h" id="m6C-xF-syu"/>
                         <outlet property="tableView" destination="NBq-kf-hxZ" id="NXl-cR-geZ"/>
+                        <outlet property="tableViewContainer" destination="fk8-nX-Y0e" id="n6r-Sp-oDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C68-tr-5hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="-416"/>
+            <point key="canvasLocation" x="-378.26086956521743" y="-416.51785714285711"/>
         </scene>
         <!--Meal Details View Controller-->
         <scene sceneID="v4J-cC-Zu1">
