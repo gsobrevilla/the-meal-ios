@@ -68,7 +68,7 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
             name: "...",
             category: "...",
             instructions: "...",
-            ingredients: ["...","...."],
+            ingredients: ["...","..."],
             youtubeVideoId: nil)
     }
     
