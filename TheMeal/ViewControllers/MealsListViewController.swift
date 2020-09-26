@@ -56,7 +56,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     // MARK: - UI Initial setup
     
     private func setupNavigationBar() {
-        navigationItem.title = "The Meal DB"
+        navigationItem.title = "Meals"
     }
     
     private func setupSearchBar() {
@@ -122,6 +122,7 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        MealsRouter.navigateToMealDetails(from: self)
     }
 }
 
