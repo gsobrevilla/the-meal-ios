@@ -19,6 +19,7 @@ class MealsListPresenter: MealsListPresenterProtocol {
     private weak var view: MealsListViewProtocol?
     private let repository = MealsRepository()
     private var meals: [Meal] = []
+    private var lastSearchQuery: String?
     
     init(view: MealsListViewProtocol) {
         self.view = view
@@ -29,7 +30,12 @@ class MealsListPresenter: MealsListPresenterProtocol {
     }
     
     func fetchDataWithSearch(query: String) {
-        repository.search(query: query) { [weak self] (success, meals) in
+        lastSearchQuery = query
+        repository.search(query: query) { [weak self] (success, meals, query) in
+            guard query == self?.lastSearchQuery else {
+                return
+            }
+            
             guard success, let meals = meals else {
                 self?.view?.showDataFetchError("Error retrieving the meals")
                 return

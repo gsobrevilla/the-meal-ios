@@ -25,6 +25,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     // MARK: - Outlets
     
     @IBOutlet private var searchBar: UISearchBar?
+    @IBOutlet private var tableViewContainer: UIView?
     @IBOutlet private var tableView: UITableView?
     
     // MARK: - Properties
@@ -40,6 +41,8 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     private var searchDelay: TimeInterval = 0.2
     private var searchTimer: Timer?
     
+    private var loadingOverlay = LoadingOverlay()
+    
     // MARK: - Callbacks
     
     override func viewDidLoad() {
@@ -51,7 +54,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.fetchInitialData()
+        requestInitialData()
     }
     
     // MARK: - UI Initial setup
@@ -73,7 +76,18 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
         tableView?.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
     }
     
-    // MARK: - Searching
+    // MARK: - Data & Searching
+    
+    private func requestInitialData() {
+        if let tableViewContainer = tableViewContainer {
+            loadingOverlay.show(over: tableViewContainer)
+        }
+        if searchBar?.text == "" {
+            presenter?.fetchInitialData()
+        } else {
+            performSearch()
+        }
+    }
     
     private func searchQueryChanged() {
         searchTimer?.invalidate()
@@ -83,6 +97,9 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     }
     
     private func performSearch() {
+        if let tableViewContainer = tableViewContainer {
+            loadingOverlay.show(over: tableViewContainer)
+        }
         let query = searchBar?.text ?? ""
         presenter?.fetchDataWithSearch(query: query)
     }
@@ -132,10 +149,12 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MealsListViewController: MealsListViewProtocol {
     
     func updateList(items: [MealsListItemViewModel]) {
+        loadingOverlay.hide()
         self.items = items
     }
     
     func showDataFetchError(_ message: String) {
+        loadingOverlay.hide()
         showOkDialog(title: "", message: message)
     }
     
