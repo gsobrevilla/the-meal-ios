@@ -11,9 +11,13 @@ import UIKit
 
 class MealsRouter {
     
-    static func navigateToMealsList(from context: UIViewController) {
+    static func navigateToMealsList(from context: UIViewController, clearingNavigationStack: Bool = false) {
         let vc = instantiateMealsListViewController()
-        context.navigationController?.pushViewController(vc, animated: true)
+        if clearingNavigationStack {
+            context.navigationController?.setViewControllers([vc], animated: true)
+        } else {
+            context.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private static func instantiateMealsListViewController() -> UIViewController {

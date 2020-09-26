@@ -12,7 +12,7 @@ class InitialViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        MealsRouter.navigateToMealsList(from: self)
+        HomeRouter.setHome(from: self)
     }
 }
 
