@@ -12,5 +12,6 @@ class ApiEndpoints {
     
     static let search = "search.php"
     static let lookup = "lookup.php"
+    static let random = "random.php"
     
 }

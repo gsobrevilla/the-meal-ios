@@ -23,16 +23,25 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-kf-hxZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
+                                        <rect key="frame" x="0.0" y="16" width="414" height="630"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Usv-31-fk9">
+                                        <rect key="frame" x="0.0" y="662" width="414" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="nkG-EF-65e"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NBq-kf-hxZ" secondAttribute="trailing" id="2DX-ZD-FIO"/>
+                                    <constraint firstItem="Usv-31-fk9" firstAttribute="top" secondItem="NBq-kf-hxZ" secondAttribute="bottom" constant="16" id="3DP-cY-dVi"/>
                                     <constraint firstItem="NBq-kf-hxZ" firstAttribute="leading" secondItem="fk8-nX-Y0e" secondAttribute="leading" id="7pP-QL-Kn4"/>
-                                    <constraint firstItem="NBq-kf-hxZ" firstAttribute="top" secondItem="fk8-nX-Y0e" secondAttribute="top" id="Iwl-Df-6N8"/>
-                                    <constraint firstAttribute="bottom" secondItem="NBq-kf-hxZ" secondAttribute="bottom" id="ZgK-DN-5vK"/>
+                                    <constraint firstItem="NBq-kf-hxZ" firstAttribute="top" secondItem="fk8-nX-Y0e" secondAttribute="top" constant="16" id="Iwl-Df-6N8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Usv-31-fk9" secondAttribute="trailing" id="OS8-Pc-RqG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Usv-31-fk9" secondAttribute="bottom" id="bya-p0-PuO"/>
+                                    <constraint firstItem="Usv-31-fk9" firstAttribute="leading" secondItem="fk8-nX-Y0e" secondAttribute="leading" id="gVN-hY-pSq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -49,6 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="zgN-jg-9Mi"/>
                     </view>
                     <connections>
+                        <outlet property="bannerImageView" destination="Usv-31-fk9" id="aEN-x4-Xjz"/>
                         <outlet property="searchBar" destination="E0A-6A-42h" id="m6C-xF-syu"/>
                         <outlet property="tableView" destination="NBq-kf-hxZ" id="NXl-cR-geZ"/>
                         <outlet property="tableViewContainer" destination="fk8-nX-Y0e" id="n6r-Sp-oDk"/>

@@ -14,6 +14,7 @@ protocol MealsListPresenterProtocol {
     func fetchInitialData()
     func fetchDataWithSearch(query: String)
     func selectItem(at index: Int)
+    func selectBanner()
 }
 
 class MealsListViewController: UIViewController, InstantiableFromStoryboard {
@@ -27,6 +28,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     @IBOutlet private var searchBar: UISearchBar?
     @IBOutlet private var tableViewContainer: UIView?
     @IBOutlet private var tableView: UITableView?
+    @IBOutlet private var bannerImageView: UIImageView?
     
     // MARK: - Properties
     
@@ -50,6 +52,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
         setupNavigationBar()
         setupSearchBar()
         setupTableView()
+        setupBanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +77,11 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
         tableView?.register(UINib(nibName: "MealsListCell", bundle: .main), forCellReuseIdentifier: "cell")
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+    }
+    
+    private func setupBanner() {
+        bannerImageView?.isUserInteractionEnabled = true
+        bannerImageView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bannerTapped)))
     }
     
     // MARK: - Data & Searching
@@ -102,6 +110,12 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
         }
         let query = searchBar?.text ?? ""
         presenter?.fetchDataWithSearch(query: query)
+    }
+    
+    // MARK: - Banner
+    
+    @objc private func bannerTapped() {
+        presenter?.selectBanner()
     }
 }
 
@@ -151,6 +165,10 @@ extension MealsListViewController: MealsListViewProtocol {
     func updateList(items: [MealsListItemViewModel]) {
         loadingOverlay.hide()
         self.items = items
+    }
+    
+    func updateRandomMeal(pictureUrl: String?) {
+        bannerImageView?.loadFrom(url: pictureUrl)
     }
     
     func showDataFetchError(_ message: String) {

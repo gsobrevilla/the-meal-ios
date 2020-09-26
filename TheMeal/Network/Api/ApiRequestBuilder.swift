@@ -20,4 +20,8 @@ class ApiRequestBuilder: HttpRequestBuilder {
         let params = ["i": id]
         return buildRequest(path: ApiEndpoints.lookup, method: .get, params: params)
     }
+    
+    func getRandomMeal() -> DataRequest {
+        return buildRequest(path: ApiEndpoints.random, method: .get)
+    }
 }

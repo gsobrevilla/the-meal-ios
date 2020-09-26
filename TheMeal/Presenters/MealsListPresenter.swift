@@ -10,6 +10,7 @@ import Foundation
 
 protocol MealsListViewProtocol: class {
     func updateList(items: [MealsListItemViewModel])
+    func updateRandomMeal(pictureUrl: String?)
     func showDataFetchError(_ message: String)
     func navigateToDetailForMeal(withId mealId: String)
 }
@@ -17,9 +18,14 @@ protocol MealsListViewProtocol: class {
 class MealsListPresenter: MealsListPresenterProtocol {
     
     private weak var view: MealsListViewProtocol?
+    
     private let repository = MealsRepository()
-    private var meals: [Meal] = []
+    
     private var lastSearchQuery: String?
+    private var randomMealTime: Timer?
+    
+    private var meals: [Meal] = []
+    private var randomMeal: Meal?
     
     init(view: MealsListViewProtocol) {
         self.view = view
@@ -27,6 +33,7 @@ class MealsListPresenter: MealsListPresenterProtocol {
     
     func fetchInitialData() {
         fetchDataWithSearch(query: "")
+        requestRandomMeal()
     }
     
     func fetchDataWithSearch(query: String) {
@@ -50,6 +57,28 @@ class MealsListPresenter: MealsListPresenterProtocol {
     func selectItem(at index: Int) {
         let meal = meals[index]
         if let id = meal.id {
+            view?.navigateToDetailForMeal(withId: id)
+        }
+    }
+    
+    private func requestRandomMeal() {
+        randomMealTime?.invalidate()
+        randomMealTime = Timer.scheduledTimer(withTimeInterval: 30, repeats: false, block: { [weak self] (timer) in
+            self?.requestRandomMeal()
+        })
+        
+        repository.getRandom { [weak self] (success, meal) in
+            guard success, let meal = meal else {
+                return
+            }
+            
+            self?.randomMeal = meal
+            self?.view?.updateRandomMeal(pictureUrl: meal.thumbUrl)
+        }
+    }
+    
+    func selectBanner() {
+        if let id = randomMeal?.id {
             view?.navigateToDetailForMeal(withId: id)
         }
     }

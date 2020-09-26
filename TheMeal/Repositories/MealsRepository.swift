@@ -41,4 +41,17 @@ class MealsRepository: ApiRepository {
             }
         }
     }
+    
+    func getRandom(completion: @escaping MealCompletion) {
+        requestBuilder.getRandomMeal().responseObject {
+           (response: DataResponse<MealsListResponse>) in
+           
+           switch response.result {
+           case .success(let value):
+               completion(true, value.meals.first)
+           case .failure:
+               completion(false, nil)
+           }
+       }
+    }
 }
