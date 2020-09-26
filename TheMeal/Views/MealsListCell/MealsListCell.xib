@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="137" id="i8t-t9-kNk" customClass="MealsListCell" customModule="TheMeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i8t-t9-kNk" id="2h1-ev-FVC">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y5h-DL-Mbi">
+                        <rect key="frame" x="16" y="16" width="80" height="80"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Q9P-ks-g5U"/>
+                            <constraint firstAttribute="height" constant="80" id="h3T-mj-vbC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCl-EV-EiX">
+                        <rect key="frame" x="112" y="16" width="286" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXb-d5-VGH">
+                        <rect key="frame" x="112" y="44.5" width="286" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OCl-EV-EiX" firstAttribute="top" secondItem="Y5h-DL-Mbi" secondAttribute="top" id="1mK-fB-mEP"/>
+                    <constraint firstItem="Y5h-DL-Mbi" firstAttribute="top" secondItem="2h1-ev-FVC" secondAttribute="top" constant="16" id="1sW-BW-Tfi"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CXb-d5-VGH" secondAttribute="bottom" constant="16" id="7o5-Ea-mGu"/>
+                    <constraint firstItem="CXb-d5-VGH" firstAttribute="top" secondItem="OCl-EV-EiX" secondAttribute="bottom" constant="8" id="FB3-cy-B1e"/>
+                    <constraint firstAttribute="trailing" secondItem="OCl-EV-EiX" secondAttribute="trailing" constant="16" id="POc-oP-Bzu"/>
+                    <constraint firstItem="Y5h-DL-Mbi" firstAttribute="leading" secondItem="2h1-ev-FVC" secondAttribute="leading" constant="16" id="dQd-MH-uCp"/>
+                    <constraint firstAttribute="trailing" secondItem="CXb-d5-VGH" secondAttribute="trailing" constant="16" id="jii-OT-kjP"/>
+                    <constraint firstItem="CXb-d5-VGH" firstAttribute="leading" secondItem="Y5h-DL-Mbi" secondAttribute="trailing" constant="16" id="nlE-F6-oBv"/>
+                    <constraint firstItem="OCl-EV-EiX" firstAttribute="leading" secondItem="Y5h-DL-Mbi" secondAttribute="trailing" constant="16" id="pbl-RI-tZr"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y5h-DL-Mbi" secondAttribute="bottom" priority="999" constant="16" id="twd-n8-stA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryLabel" destination="CXb-d5-VGH" id="ciG-Oi-T8f"/>
+                <outlet property="nameLabel" destination="OCl-EV-EiX" id="Kr8-rT-cqv"/>
+                <outlet property="thumbImageView" destination="Y5h-DL-Mbi" id="4Yz-CN-sXN"/>
+            </connections>
+            <point key="canvasLocation" x="2.8985507246376816" y="50.558035714285715"/>
+        </tableViewCell>
+    </objects>
+</document>
