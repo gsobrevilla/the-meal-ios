@@ -15,4 +15,9 @@ class ApiRequestBuilder: HttpRequestBuilder {
         let params = ["s": query]
         return buildRequest(path: ApiEndpoints.search, method: .get, params: params)
     }
+    
+    func getMealDetails(id: String) -> DataRequest {
+        let params = ["i": id]
+        return buildRequest(path: ApiEndpoints.lookup, method: .get, params: params)
+    }
 }

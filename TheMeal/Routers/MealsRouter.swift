@@ -22,4 +22,16 @@ class MealsRouter {
         vc.presenter = presenter
         return vc
     }
+    
+    static func navigateToMealDetails(mealId: String, from context: UIViewController) {
+        let vc = instantiateMealDetailsViewController(mealId: mealId)
+        context.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private static func instantiateMealDetailsViewController(mealId: String) -> UIViewController {
+        let vc = MealDetailsViewController.instantiateFromStoryboard()
+        let presenter = MealDetailsPresenter(view: vc, mealId: mealId)
+        vc.presenter = presenter
+        return vc
+    }
 }

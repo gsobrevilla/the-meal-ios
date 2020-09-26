@@ -10,6 +10,7 @@ import Foundation
 
 class ApiEndpoints {
     
-    static let search = "searcha.php"
+    static let search = "search.php"
+    static let lookup = "lookup.php"
     
 }

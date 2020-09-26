@@ -13,6 +13,7 @@ protocol MealsListPresenterProtocol {
     
     func fetchInitialData()
     func fetchDataWithSearch(query: String)
+    func selectItem(at index: Int)
 }
 
 class MealsListViewController: UIViewController, InstantiableFromStoryboard {
@@ -56,7 +57,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     // MARK: - UI Initial setup
     
     private func setupNavigationBar() {
-        navigationItem.title = "The Meal DB"
+        navigationItem.title = "Meals"
     }
     
     private func setupSearchBar() {
@@ -122,6 +123,7 @@ extension MealsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.selectItem(at: indexPath.row)
     }
 }
 
@@ -135,5 +137,9 @@ extension MealsListViewController: MealsListViewProtocol {
     
     func showDataFetchError(_ message: String) {
         showOkDialog(title: "", message: message)
+    }
+    
+    func navigateToDetailForMeal(withId mealId: String) {
+        MealsRouter.navigateToMealDetails(mealId: mealId, from: self)
     }
 }
