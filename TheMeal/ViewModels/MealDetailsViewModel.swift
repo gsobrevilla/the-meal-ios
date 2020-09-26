@@ -14,4 +14,5 @@ struct MealDetailsViewModel {
     let category: String
     let instructions: String
     let ingredients: [String]
+    let youtubeVideoId: String?
 }
