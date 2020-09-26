@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import youtube_ios_player_helper
 
 protocol MealDetailsPresenterProtocol {
     
@@ -24,6 +25,7 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     
     @IBOutlet private var nameLabel: UILabel?
     @IBOutlet private var categoryLabel: UILabel?
+    @IBOutlet private var youtubePlayerView: YTPlayerView?
     @IBOutlet private var instructionsLabel: UILabel?
     @IBOutlet private var ingredientsStackView: UIStackView?
     
@@ -66,12 +68,18 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
             name: "...",
             category: "...",
             instructions: "...",
-            ingredients: ["...","...."])
+            ingredients: ["...","...."],
+            youtubeVideoId: nil)
     }
     
     private func updateUIFromViewModel() {
         nameLabel?.text = viewModel?.name
         categoryLabel?.text = viewModel?.category
+        
+        if let videoId = viewModel?.youtubeVideoId {
+            youtubePlayerView?.load(withVideoId: videoId)
+        }
+        
         instructionsLabel?.text = viewModel?.instructions
         
         ingredientsStackView?.arrangedSubviews.forEach({ (subview) in

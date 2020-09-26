@@ -43,6 +43,7 @@ fileprivate extension Meal {
             name: name ?? "",
             category: category ?? "",
             instructions: instructions ?? "",
-            ingredients: ingredients)
+            ingredients: ingredients,
+            youtubeVideoId: youtubeVideoId)
     }
 }

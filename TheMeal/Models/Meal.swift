@@ -17,6 +17,13 @@ class Meal: Mappable {
     var category: String?
     var instructions: String?
     var ingredients: [String] = []
+    var youtubeVideoUrl: String?
+    
+    var youtubeVideoId: String? {
+        guard let youtubeVideoUrl = youtubeVideoUrl else { return nil }
+        guard let urlComponents = URLComponents(string: youtubeVideoUrl) else { return nil }
+        return urlComponents.queryItems?.first(where: { $0.name == "v" })?.value
+    }
     
     init() {}
     
@@ -28,6 +35,7 @@ class Meal: Mappable {
         name <- map["strMeal"]
         category  <- map["strCategory"]
         instructions <- map["strInstructions"]
+        youtubeVideoUrl <- map["strYoutube"]
         
         ingredients = []
         (1...20).forEach { (number) in
