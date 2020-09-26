@@ -31,6 +31,7 @@
 		3DD5DF67251FD1F40010B63D /* UIViewController+Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF66251FD1F40010B63D /* UIViewController+Dialogs.swift */; };
 		3DD5DF69251FD36E0010B63D /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */; };
 		3DD5DF6B251FD5D40010B63D /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */; };
+		3DD5DF6D251FD89D0010B63D /* MealDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */; };
 		3DE47D5E251FBB0D00D89C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */; };
 		3DE47D60251FBB0D00D89C96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */; };
 		3DE47D62251FBB0D00D89C96 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D61251FBB0D00D89C96 /* InitialViewController.swift */; };
@@ -79,6 +80,7 @@
 		3DD5DF66251FD1F40010B63D /* UIViewController+Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dialogs.swift"; sourceTree = "<group>"; };
 		3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
+		3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsPresenter.swift; sourceTree = "<group>"; };
 		3DE47D5A251FBB0D00D89C96 /* TheMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD5DF47251FC9EB0010B63D /* MealsListPresenter.swift */,
+				3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				3DD5DF48251FC9EB0010B63D /* MealsListPresenter.swift in Sources */,
 				3DD5DF4F251FCD080010B63D /* HttpRequestBuilder.swift in Sources */,
 				3DD5DF40251FC2690010B63D /* MealsListCell.swift in Sources */,
+				3DD5DF6D251FD89D0010B63D /* MealDetailsPresenter.swift in Sources */,
 				3DD5DF5F251FCEE50010B63D /* MealsRepository.swift in Sources */,
 				3DD5DF4B251FCAE50010B63D /* MealsRouter.swift in Sources */,
 				3DD5DF51251FCD3D0010B63D /* HttpRepository.swift in Sources */,

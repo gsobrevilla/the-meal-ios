@@ -11,5 +11,6 @@ import Foundation
 class ApiEndpoints {
     
     static let search = "search.php"
+    static let lookup = "lookup.php"
     
 }

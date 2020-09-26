@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+protocol MealDetailsPresenterProtocol {
+    
+    func fetchInitialData()
+}
+
 class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     
     // MARK: Static Properties
@@ -24,6 +29,8 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     
     // MARK: - Properties
     
+    var presenter: MealDetailsPresenterProtocol?
+    
     private var viewModel: MealDetailsViewModel? {
         didSet {
             updateUIFromViewModel()
@@ -35,7 +42,12 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        updateUIFromViewModel()
+        buildInitialViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.fetchInitialData()
     }
     
     // MARK: - UI Initial setup
@@ -45,6 +57,14 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
     }
     
     // MARK: - View Model
+    
+    private func buildInitialViewModel() {
+        viewModel = MealDetailsViewModel(
+            name: "...",
+            category: "...",
+            instructions: "...",
+            ingredients: ["...","...."])
+    }
     
     private func updateUIFromViewModel() {
         nameLabel?.text = viewModel?.name
@@ -66,5 +86,16 @@ class MealDetailsViewController: UIViewController, InstantiableFromStoryboard {
         label.textColor = .darkGray
         label.text = "• \(ingredient)"
         return label
+    }
+}
+
+extension MealDetailsViewController: MealDetailsViewProtocol  {
+    
+    func updateView(viewModel: MealDetailsViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    func showDataFetchError(_ message: String) {
+        showOkDialog(title: "", message: message)
     }
 }
