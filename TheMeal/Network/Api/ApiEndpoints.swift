@@ -10,5 +10,6 @@ import Foundation
 
 class ApiEndpoints {
     
-//    static let verificationCodes    = "verification_codes"
+    static let search = "searcha.php"
+    
 }

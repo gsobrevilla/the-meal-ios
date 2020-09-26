@@ -132,4 +132,8 @@ extension MealsListViewController: MealsListViewProtocol {
     func updateList(items: [MealsListItemViewModel]) {
         self.items = items
     }
+    
+    func showDataFetchError(_ message: String) {
+        showOkDialog(title: "", message: message)
+    }
 }

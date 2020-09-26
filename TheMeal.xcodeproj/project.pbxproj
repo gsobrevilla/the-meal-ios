@@ -25,6 +25,10 @@
 		3DD5DF58251FCDB70010B63D /* ApiRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF57251FCDB70010B63D /* ApiRequestBuilder.swift */; };
 		3DD5DF5A251FCDDF0010B63D /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF59251FCDDF0010B63D /* HttpManager.swift */; };
 		3DD5DF5C251FCDF00010B63D /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF5B251FCDF00010B63D /* NetworkRequestManager.swift */; };
+		3DD5DF5F251FCEE50010B63D /* MealsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF5E251FCEE50010B63D /* MealsRepository.swift */; };
+		3DD5DF62251FCF880010B63D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF61251FCF880010B63D /* Meal.swift */; };
+		3DD5DF65251FD0470010B63D /* MealsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF64251FD0470010B63D /* MealsListResponse.swift */; };
+		3DD5DF67251FD1F40010B63D /* UIViewController+Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF66251FD1F40010B63D /* UIViewController+Dialogs.swift */; };
 		3DE47D5E251FBB0D00D89C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */; };
 		3DE47D60251FBB0D00D89C96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */; };
 		3DE47D62251FBB0D00D89C96 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D61251FBB0D00D89C96 /* InitialViewController.swift */; };
@@ -67,6 +71,10 @@
 		3DD5DF57251FCDB70010B63D /* ApiRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestBuilder.swift; sourceTree = "<group>"; };
 		3DD5DF59251FCDDF0010B63D /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		3DD5DF5B251FCDF00010B63D /* NetworkRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
+		3DD5DF5E251FCEE50010B63D /* MealsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRepository.swift; sourceTree = "<group>"; };
+		3DD5DF61251FCF880010B63D /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		3DD5DF64251FD0470010B63D /* MealsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListResponse.swift; sourceTree = "<group>"; };
+		3DD5DF66251FD1F40010B63D /* UIViewController+Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dialogs.swift"; sourceTree = "<group>"; };
 		3DE47D5A251FBB0D00D89C96 /* TheMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 			children = (
 				3DD5DF32251FBF420010B63D /* UIStoryboard+InstantiateViewController.swift */,
 				3DD5DF44251FC4030010B63D /* UIImageView+LoadFromUrl.swift */,
+				3DD5DF66251FD1F40010B63D /* UIViewController+Dialogs.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 		3DD5DF4C251FCCB20010B63D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3DD5DF63251FD03D0010B63D /* ResponseModels */,
 				3DD5DF52251FCD6E0010B63D /* Api */,
 				3DD5DF4D251FCCC10010B63D /* Base */,
 			);
@@ -209,6 +219,30 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		3DD5DF5D251FCED00010B63D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5DF5E251FCEE50010B63D /* MealsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		3DD5DF60251FCF790010B63D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5DF61251FCF880010B63D /* Meal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3DD5DF63251FD03D0010B63D /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5DF64251FD0470010B63D /* MealsListResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
 		3DE47D51251FBB0D00D89C96 = {
 			isa = PBXGroup;
 			children = (
@@ -232,15 +266,17 @@
 		3DE47D5C251FBB0D00D89C96 /* TheMeal */ = {
 			isa = PBXGroup;
 			children = (
+				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
 				3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */,
+				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
 				3DE47D66251FBB0E00D89C96 /* Assets.xcassets */,
 				3DD5DF36251FC0BF0010B63D /* Extensions */,
-				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
+				3DD5DF60251FCF790010B63D /* Models */,
 				3DD5DF4C251FCCB20010B63D /* Network */,
 				3DD5DF46251FC9DA0010B63D /* Presenters */,
 				3DD5DF37251FC0C40010B63D /* Protocols */,
+				3DD5DF5D251FCED00010B63D /* Repositories */,
 				3DD5DF49251FCADB0010B63D /* Routers */,
-				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
 				3DE47D80251FBE6300D89C96 /* Storyboards */,
 				3DE47D7F251FBE3900D89C96 /* ViewControllers */,
 				3DD5DF41251FC3070010B63D /* ViewModels */,
@@ -469,13 +505,17 @@
 				3DD5DF48251FC9EB0010B63D /* MealsListPresenter.swift in Sources */,
 				3DD5DF4F251FCD080010B63D /* HttpRequestBuilder.swift in Sources */,
 				3DD5DF40251FC2690010B63D /* MealsListCell.swift in Sources */,
+				3DD5DF5F251FCEE50010B63D /* MealsRepository.swift in Sources */,
 				3DD5DF4B251FCAE50010B63D /* MealsRouter.swift in Sources */,
 				3DD5DF51251FCD3D0010B63D /* HttpRepository.swift in Sources */,
 				3DD5DF3A251FC0EB0010B63D /* InstantiableFromStoryboard.swift in Sources */,
 				3DD5DF58251FCDB70010B63D /* ApiRequestBuilder.swift in Sources */,
 				3DD5DF56251FCDA20010B63D /* ApiEndpoints.swift in Sources */,
+				3DD5DF62251FCF880010B63D /* Meal.swift in Sources */,
+				3DD5DF67251FD1F40010B63D /* UIViewController+Dialogs.swift in Sources */,
 				3DD5DF54251FCD7F0010B63D /* ApiRepository.swift in Sources */,
 				3DE47D5E251FBB0D00D89C96 /* AppDelegate.swift in Sources */,
+				3DD5DF65251FD0470010B63D /* MealsListResponse.swift in Sources */,
 				3DE47D60251FBB0D00D89C96 /* SceneDelegate.swift in Sources */,
 				3DD5DF43251FC31A0010B63D /* MealsListItemViewModel.swift in Sources */,
 			);

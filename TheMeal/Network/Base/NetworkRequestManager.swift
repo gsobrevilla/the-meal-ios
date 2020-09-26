@@ -25,7 +25,7 @@ extension NetworkRequestManager: RequestAdapter {
 extension NetworkRequestManager: RequestRetrier {
 
     func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-        completion(true, 0.0)
+        completion(false, 0.0)
     }
 }
 

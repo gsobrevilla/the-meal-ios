@@ -22,6 +22,7 @@ class MealsListCell: UITableViewCell {
     }
     
     private func updateUIFromViewModel() {
+        thumbImageView?.image = nil
         thumbImageView?.loadFrom(url: viewModel?.pictureUrl)
         nameLabel?.text = viewModel?.name
         categoryLabel?.text = viewModel?.category

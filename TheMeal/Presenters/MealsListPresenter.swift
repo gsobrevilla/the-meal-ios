@@ -10,43 +10,41 @@ import Foundation
 
 protocol MealsListViewProtocol: class {
     func updateList(items: [MealsListItemViewModel])
+    func showDataFetchError(_ message: String)
 }
 
 class MealsListPresenter: MealsListPresenterProtocol {
     
     private weak var view: MealsListViewProtocol?
-    
-    private var mockedItems = [MealsListItemViewModel(
-        pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-        name: "first",
-        category: "Side"
-    ),
-    MealsListItemViewModel(
-        pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-        name: "second",
-        category: "Side"
-    ),
-    MealsListItemViewModel(
-        pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-        name: "third",
-        category: "Side"
-    ),
-    MealsListItemViewModel(
-        pictureUrl: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
-        name: "fourth https://www.themea https://www.themea  https://www.themea https://www.themea ",
-        category: "Side https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea https://www.themea"
-    )]
+    private let repository = MealsRepository()
     
     init(view: MealsListViewProtocol) {
         self.view = view
     }
     
     func fetchInitialData() {
-        view?.updateList(items: mockedItems)
+        fetchDataWithSearch(query: "")
     }
     
     func fetchDataWithSearch(query: String) {
-        let items = mockedItems.filter({ $0.name.contains(query) })
-        view?.updateList(items: items)
+        repository.search(query: query) { [weak self] (success, meals) in
+            guard success, let meals = meals else {
+                self?.view?.showDataFetchError("Error retrieving the meals")
+                return
+            }
+            
+            let items = meals.map({ $0.mealListItemViewModel })
+            self?.view?.updateList(items: items)
+        }
+    }
+}
+
+fileprivate extension Meal {
+    
+    var mealListItemViewModel: MealsListItemViewModel {
+        return MealsListItemViewModel(
+            pictureUrl: thumbUrl,
+            name: name ?? "",
+            category: category ?? "")
     }
 }

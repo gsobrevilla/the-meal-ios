@@ -22,19 +22,19 @@ class HttpRequestBuilder {
         self.defaultSessionManager = defaultSessionManager
     }
     
-    func getRequest(path: String, method: Alamofire.HTTPMethod) -> DataRequest {
-        return getRequest(path: path, method: method, params: [:])
+    func buildRequest(path: String, method: Alamofire.HTTPMethod) -> DataRequest {
+        return buildRequest(path: path, method: method, params: [:])
     }
     
-    func getRequest(path: String, method: Alamofire.HTTPMethod, params: Mappable) -> DataRequest {
-        return getRequest(path: path, method: method, params: params.toJSON())
+    func buildRequest(path: String, method: Alamofire.HTTPMethod, params: Mappable) -> DataRequest {
+        return buildRequest(path: path, method: method, params: params.toJSON())
     }
     
-    func getRequest(path: String, method: Alamofire.HTTPMethod, params: Parameters) -> DataRequest {
-        return getRequest(manager: defaultSessionManager, path: path, method: method, params: params)
+    func buildRequest(path: String, method: Alamofire.HTTPMethod, params: Parameters) -> DataRequest {
+        return buildRequest(manager: defaultSessionManager, path: path, method: method, params: params)
     }
     
-    func getRequest(manager: SessionManager, path: String, method: Alamofire.HTTPMethod, params: Parameters) -> DataRequest {
+    func buildRequest(manager: SessionManager, path: String, method: Alamofire.HTTPMethod, params: Parameters) -> DataRequest {
         return manager.request(getCompleteUrl(path: path),
                                method: method,
                                parameters: params,
