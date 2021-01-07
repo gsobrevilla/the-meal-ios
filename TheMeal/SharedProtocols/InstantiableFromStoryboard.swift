@@ -14,7 +14,7 @@ protocol InstantiableFromStoryboard where Self: UIViewController {
 }
 
 extension InstantiableFromStoryboard {
-    static var appStoryboard: AppStoryboard { return .main }
+    static var appStoryboard: AppStoryboard { return AppStoryboard.main  }
     
     static func instantiateFromStoryboard() -> Self {
         return UIStoryboard.instantiate(viewController: String(describing: self), from: appStoryboard) as! Self

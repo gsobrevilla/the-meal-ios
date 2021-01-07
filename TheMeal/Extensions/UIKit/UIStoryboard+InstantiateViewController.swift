@@ -12,6 +12,6 @@ import UIKit
 extension UIStoryboard {
     
     static func instantiate(viewController viewControllerName: String, from appStoryboard: AppStoryboard) -> UIViewController {
-        return UIStoryboard(name: appStoryboard.rawValue, bundle: .main).instantiateViewController(withIdentifier: viewControllerName)
+        return UIStoryboard(name: appStoryboard.storyboardName, bundle: .main).instantiateViewController(withIdentifier: viewControllerName)
     }
 }
