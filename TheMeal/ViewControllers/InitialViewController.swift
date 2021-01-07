@@ -12,7 +12,9 @@ class InitialViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        HomeRouter.setHome(from: self)
+        if let navigationController = navigationController {
+            InitialCoordinator(navigationController: navigationController).start()
+        }
     }
 }
 

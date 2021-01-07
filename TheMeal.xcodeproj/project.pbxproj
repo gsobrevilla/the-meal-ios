@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D98296225A7959000A0F1FC /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296125A7959000A0F1FC /* InitialCoordinator.swift */; };
+		3D98296825A7965200A0F1FC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296725A7965200A0F1FC /* HomeCoordinator.swift */; };
+		3D98296D25A7976700A0F1FC /* MealsSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296C25A7976700A0F1FC /* MealsSceneFactory.swift */; };
+		3D98297125A797B200A0F1FC /* MealsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98297025A797B200A0F1FC /* MealsCoordinator.swift */; };
 		3DD5DF2D251FBE990010B63D /* Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2C251FBE990010B63D /* Meals.storyboard */; };
 		3DD5DF2F251FBEBB0010B63D /* MealsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */; };
 		3DD5DF31251FBF0E0010B63D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */; };
@@ -59,6 +63,10 @@
 /* Begin PBXFileReference section */
 		15D80EE33A606DC02ABAACDC /* Pods_TheMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2507C06B709FDB9C02FA5346 /* Pods-TheMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMealTests.release.xcconfig"; path = "Target Support Files/Pods-TheMealTests/Pods-TheMealTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D98296125A7959000A0F1FC /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
+		3D98296725A7965200A0F1FC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		3D98296C25A7976700A0F1FC /* MealsSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsSceneFactory.swift; sourceTree = "<group>"; };
+		3D98297025A797B200A0F1FC /* MealsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCoordinator.swift; sourceTree = "<group>"; };
 		3DD5DF2C251FBE990010B63D /* Meals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meals.storyboard; sourceTree = "<group>"; };
 		3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListViewController.swift; sourceTree = "<group>"; };
 		3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
@@ -131,6 +139,24 @@
 				15D80EE33A606DC02ABAACDC /* Pods_TheMealTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D98296025A7958200A0F1FC /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3D98296125A7959000A0F1FC /* InitialCoordinator.swift */,
+				3D98296725A7965200A0F1FC /* HomeCoordinator.swift */,
+				3D98297025A797B200A0F1FC /* MealsCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3D98296B25A7974B00A0F1FC /* SceneFactories */ = {
+			isa = PBXGroup;
+			children = (
+				3D98296C25A7976700A0F1FC /* MealsSceneFactory.swift */,
+			);
+			path = SceneFactories;
 			sourceTree = "<group>";
 		};
 		3DD5DF36251FC0BF0010B63D /* Extensions */ = {
@@ -291,6 +317,8 @@
 		3DE47D5C251FBB0D00D89C96 /* TheMeal */ = {
 			isa = PBXGroup;
 			children = (
+				3D98296B25A7974B00A0F1FC /* SceneFactories */,
+				3D98296025A7958200A0F1FC /* Coordinators */,
 				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
 				3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */,
 				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
@@ -531,9 +559,11 @@
 				3DD5DF48251FC9EB0010B63D /* MealsListPresenter.swift in Sources */,
 				3DD5DF4F251FCD080010B63D /* HttpRequestBuilder.swift in Sources */,
 				3DD5DF40251FC2690010B63D /* MealsListCell.swift in Sources */,
+				3D98296D25A7976700A0F1FC /* MealsSceneFactory.swift in Sources */,
 				3DD5DF6D251FD89D0010B63D /* MealDetailsPresenter.swift in Sources */,
 				3DD5DF73251FE1AF0010B63D /* LoadingOverlay.swift in Sources */,
 				3DD5DF5F251FCEE50010B63D /* MealsRepository.swift in Sources */,
+				3D98296225A7959000A0F1FC /* InitialCoordinator.swift in Sources */,
 				3DD5DF4B251FCAE50010B63D /* MealsRouter.swift in Sources */,
 				3DD5DF51251FCD3D0010B63D /* HttpRepository.swift in Sources */,
 				3DD5DF3A251FC0EB0010B63D /* InstantiableFromStoryboard.swift in Sources */,
@@ -547,6 +577,8 @@
 				3DD5DF75251FE1D10010B63D /* UIView+AddEmbeddedView.swift.swift in Sources */,
 				3DD5DF65251FD0470010B63D /* MealsListResponse.swift in Sources */,
 				3DE47D60251FBB0D00D89C96 /* SceneDelegate.swift in Sources */,
+				3D98296825A7965200A0F1FC /* HomeCoordinator.swift in Sources */,
+				3D98297125A797B200A0F1FC /* MealsCoordinator.swift in Sources */,
 				3DD5DF6B251FD5D40010B63D /* MealDetailsViewModel.swift in Sources */,
 				3DD5DF70251FE0D70010B63D /* HomeRouter.swift in Sources */,
 				3DD5DF43251FC31A0010B63D /* MealsListItemViewModel.swift in Sources */,

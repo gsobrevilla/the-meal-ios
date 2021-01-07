@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class HomeRouter {
-    
-    static func setHome(from context: UIViewController) {
-        MealsRouter.navigateToMealsList(from: context, clearingNavigationStack: true)
-    }
+//    
+//    static func setHome(from context: UIViewController) {
+//        MealsRouter.navigateToMealsList(from: context, clearingNavigationStack: true)
+//    }
 }

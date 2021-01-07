@@ -175,8 +175,4 @@ extension MealsListViewController: MealsListViewProtocol {
         loadingOverlay.hide()
         showOkDialog(title: "", message: message)
     }
-    
-    func navigateToDetailForMeal(withId mealId: String) {
-        MealsRouter.navigateToMealDetails(mealId: mealId, from: self)
-    }
 }
