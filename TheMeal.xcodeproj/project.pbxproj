@@ -10,6 +10,7 @@
 		3D98296225A7959000A0F1FC /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296125A7959000A0F1FC /* InitialCoordinator.swift */; };
 		3D98296825A7965200A0F1FC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296725A7965200A0F1FC /* HomeCoordinator.swift */; };
 		3D98297125A797B200A0F1FC /* MealsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98297025A797B200A0F1FC /* MealsCoordinator.swift */; };
+		3D98298225A7A51800A0F1FC /* MealsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98298125A7A51800A0F1FC /* MealsFeature.swift */; };
 		3DD5DF2D251FBE990010B63D /* Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2C251FBE990010B63D /* Meals.storyboard */; };
 		3DD5DF2F251FBEBB0010B63D /* MealsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */; };
 		3DD5DF31251FBF0E0010B63D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */; };
@@ -63,6 +64,7 @@
 		3D98296125A7959000A0F1FC /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
 		3D98296725A7965200A0F1FC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		3D98297025A797B200A0F1FC /* MealsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCoordinator.swift; sourceTree = "<group>"; };
+		3D98298125A7A51800A0F1FC /* MealsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsFeature.swift; sourceTree = "<group>"; };
 		3DD5DF2C251FBE990010B63D /* Meals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meals.storyboard; sourceTree = "<group>"; };
 		3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListViewController.swift; sourceTree = "<group>"; };
 		3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
@@ -135,14 +137,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3D98296025A7958200A0F1FC /* Coordinators */ = {
+		3D98297C25A7A42600A0F1FC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3D98298025A7A4C700A0F1FC /* Start */,
+				3D98297D25A7A42D00A0F1FC /* Meals */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3D98297D25A7A42D00A0F1FC /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				3D98298125A7A51800A0F1FC /* MealsFeature.swift */,
+				3D98297025A797B200A0F1FC /* MealsCoordinator.swift */,
+				3DD5DF2C251FBE990010B63D /* Meals.storyboard */,
+				3D98297F25A7A43700A0F1FC /* Detail */,
+				3D98297E25A7A43300A0F1FC /* List */,
+			);
+			path = Meals;
+			sourceTree = "<group>";
+		};
+		3D98297E25A7A43300A0F1FC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5DF3D251FC2630010B63D /* MealsListCell.xib */,
+				3DD5DF3F251FC2690010B63D /* MealsListCell.swift */,
+				3DD5DF42251FC31A0010B63D /* MealsListItemViewModel.swift */,
+				3DD5DF47251FC9EB0010B63D /* MealsListPresenter.swift */,
+				3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3D98297F25A7A43700A0F1FC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */,
+				3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */,
+				3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3D98298025A7A4C700A0F1FC /* Start */ = {
 			isa = PBXGroup;
 			children = (
 				3D98296125A7959000A0F1FC /* InitialCoordinator.swift */,
 				3D98296725A7965200A0F1FC /* HomeCoordinator.swift */,
-				3D98297025A797B200A0F1FC /* MealsCoordinator.swift */,
+				3DE47D61251FBB0D00D89C96 /* InitialViewController.swift */,
+				3DE47D68251FBB0E00D89C96 /* LaunchScreen.storyboard */,
+				3DE47D63251FBB0D00D89C96 /* Main.storyboard */,
 			);
-			path = Coordinators;
+			path = Start;
+			sourceTree = "<group>";
+		};
+		3D98298B25A7A61100A0F1FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DE47D66251FBB0E00D89C96 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D98299025A7A66700A0F1FC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */,
+				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
+				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		3DD5DF36251FC0BF0010B63D /* Extensions */ = {
@@ -153,12 +218,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		3DD5DF37251FC0C40010B63D /* Protocols */ = {
+		3DD5DF37251FC0C40010B63D /* SharedProtocols */ = {
 			isa = PBXGroup;
 			children = (
 				3DD5DF39251FC0EB0010B63D /* InstantiableFromStoryboard.swift */,
 			);
-			path = Protocols;
+			path = SharedProtocols;
 			sourceTree = "<group>";
 		};
 		3DD5DF38251FC0CF0010B63D /* UIKit */ = {
@@ -172,40 +237,12 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		3DD5DF3B251FC24E0010B63D /* Views */ = {
+		3DD5DF3B251FC24E0010B63D /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
 				3DD5DF71251FE1A30010B63D /* LoadingOverlay */,
-				3DD5DF3C251FC2550010B63D /* MealsListCell */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3DD5DF3C251FC2550010B63D /* MealsListCell */ = {
-			isa = PBXGroup;
-			children = (
-				3DD5DF3D251FC2630010B63D /* MealsListCell.xib */,
-				3DD5DF3F251FC2690010B63D /* MealsListCell.swift */,
-			);
-			path = MealsListCell;
-			sourceTree = "<group>";
-		};
-		3DD5DF41251FC3070010B63D /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				3DD5DF42251FC31A0010B63D /* MealsListItemViewModel.swift */,
-				3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		3DD5DF46251FC9DA0010B63D /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				3DD5DF47251FC9EB0010B63D /* MealsListPresenter.swift */,
-				3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */,
-			);
-			path = Presenters;
+			path = SharedViews;
 			sourceTree = "<group>";
 		};
 		3DD5DF4C251FCCB20010B63D /* Network */ = {
@@ -250,6 +287,7 @@
 		3DD5DF60251FCF790010B63D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */,
 				3DD5DF61251FCF880010B63D /* Meal.swift */,
 			);
 			path = Models;
@@ -294,21 +332,15 @@
 		3DE47D5C251FBB0D00D89C96 /* TheMeal */ = {
 			isa = PBXGroup;
 			children = (
-				3D98296025A7958200A0F1FC /* Coordinators */,
-				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
-				3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */,
-				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
-				3DE47D66251FBB0E00D89C96 /* Assets.xcassets */,
+				3D98299025A7A66700A0F1FC /* Configuration */,
 				3DD5DF36251FC0BF0010B63D /* Extensions */,
+				3D98297C25A7A42600A0F1FC /* Features */,
 				3DD5DF60251FCF790010B63D /* Models */,
 				3DD5DF4C251FCCB20010B63D /* Network */,
-				3DD5DF46251FC9DA0010B63D /* Presenters */,
-				3DD5DF37251FC0C40010B63D /* Protocols */,
 				3DD5DF5D251FCED00010B63D /* Repositories */,
-				3DE47D80251FBE6300D89C96 /* Storyboards */,
-				3DE47D7F251FBE3900D89C96 /* ViewControllers */,
-				3DD5DF41251FC3070010B63D /* ViewModels */,
-				3DD5DF3B251FC24E0010B63D /* Views */,
+				3D98298B25A7A61100A0F1FC /* Resources */,
+				3DD5DF37251FC0C40010B63D /* SharedProtocols */,
+				3DD5DF3B251FC24E0010B63D /* SharedViews */,
 			);
 			path = TheMeal;
 			sourceTree = "<group>";
@@ -320,27 +352,6 @@
 				3DE47D76251FBB0E00D89C96 /* Info.plist */,
 			);
 			path = TheMealTests;
-			sourceTree = "<group>";
-		};
-		3DE47D7F251FBE3900D89C96 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3DE47D61251FBB0D00D89C96 /* InitialViewController.swift */,
-				3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */,
-				3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		3DE47D80251FBE6300D89C96 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */,
-				3DE47D68251FBB0E00D89C96 /* LaunchScreen.storyboard */,
-				3DE47D63251FBB0D00D89C96 /* Main.storyboard */,
-				3DD5DF2C251FBE990010B63D /* Meals.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		751D4DB0E0184BA7379073A1 /* Pods */ = {
@@ -530,6 +541,7 @@
 				3DD5DF5C251FCDF00010B63D /* NetworkRequestManager.swift in Sources */,
 				3DD5DF5A251FCDDF0010B63D /* HttpManager.swift in Sources */,
 				3DD5DF33251FBF420010B63D /* UIStoryboard+InstantiateViewController.swift in Sources */,
+				3D98298225A7A51800A0F1FC /* MealsFeature.swift in Sources */,
 				3DD5DF2F251FBEBB0010B63D /* MealsListViewController.swift in Sources */,
 				3DD5DF48251FC9EB0010B63D /* MealsListPresenter.swift in Sources */,
 				3DD5DF4F251FCD080010B63D /* HttpRequestBuilder.swift in Sources */,
@@ -716,7 +728,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26JD983RQL;
-				INFOPLIST_FILE = TheMeal/Info.plist;
+				INFOPLIST_FILE = TheMeal/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,7 +749,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26JD983RQL;
-				INFOPLIST_FILE = TheMeal/Info.plist;
+				INFOPLIST_FILE = TheMeal/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

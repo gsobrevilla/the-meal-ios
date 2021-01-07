@@ -21,7 +21,7 @@ class MealsListViewController: UIViewController, InstantiableFromStoryboard {
     
     // MARK: Static Properties
     
-    static var appStoryboard: AppStoryboard = .meals
+    static var appStoryboard: AppStoryboard = MealsFeature.storyboard
     
     // MARK: - Outlets
     
