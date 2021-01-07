@@ -12,12 +12,12 @@ protocol MealsListViewProtocol: class {
     func updateList(items: [MealsListItemViewModel])
     func updateRandomMeal(pictureUrl: String?)
     func showDataFetchError(_ message: String)
-    func navigateToDetailForMeal(withId mealId: String)
 }
 
 class MealsListPresenter: MealsListPresenterProtocol {
     
     private weak var view: MealsListViewProtocol?
+    private let coordinator: MealsCoordinator
     
     private let repository = MealsRepository()
     
@@ -27,8 +27,9 @@ class MealsListPresenter: MealsListPresenterProtocol {
     private var meals: [Meal] = []
     private var randomMeal: Meal?
     
-    init(view: MealsListViewProtocol) {
+    init(view: MealsListViewProtocol, coordinator: MealsCoordinator) {
         self.view = view
+        self.coordinator = coordinator
     }
     
     func fetchInitialData() {
@@ -57,7 +58,7 @@ class MealsListPresenter: MealsListPresenterProtocol {
     func selectItem(at index: Int) {
         let meal = meals[index]
         if let id = meal.id {
-            view?.navigateToDetailForMeal(withId: id)
+            coordinator.openDetailForMeal(withId: id)
         }
     }
     
@@ -79,7 +80,7 @@ class MealsListPresenter: MealsListPresenterProtocol {
     
     func selectBanner() {
         if let id = randomMeal?.id {
-            view?.navigateToDetailForMeal(withId: id)
+            coordinator.openDetailForMeal(withId: id)
         }
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D98296225A7959000A0F1FC /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296125A7959000A0F1FC /* InitialCoordinator.swift */; };
+		3D98296825A7965200A0F1FC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98296725A7965200A0F1FC /* HomeCoordinator.swift */; };
+		3D98297125A797B200A0F1FC /* MealsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98297025A797B200A0F1FC /* MealsCoordinator.swift */; };
 		3DD5DF2D251FBE990010B63D /* Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2C251FBE990010B63D /* Meals.storyboard */; };
 		3DD5DF2F251FBEBB0010B63D /* MealsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */; };
 		3DD5DF31251FBF0E0010B63D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */; };
@@ -17,7 +20,6 @@
 		3DD5DF43251FC31A0010B63D /* MealsListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF42251FC31A0010B63D /* MealsListItemViewModel.swift */; };
 		3DD5DF45251FC4030010B63D /* UIImageView+LoadFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF44251FC4030010B63D /* UIImageView+LoadFromUrl.swift */; };
 		3DD5DF48251FC9EB0010B63D /* MealsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF47251FC9EB0010B63D /* MealsListPresenter.swift */; };
-		3DD5DF4B251FCAE50010B63D /* MealsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF4A251FCAE50010B63D /* MealsRouter.swift */; };
 		3DD5DF4F251FCD080010B63D /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF4E251FCD080010B63D /* HttpRequestBuilder.swift */; };
 		3DD5DF51251FCD3D0010B63D /* HttpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF50251FCD3D0010B63D /* HttpRepository.swift */; };
 		3DD5DF54251FCD7F0010B63D /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF53251FCD7F0010B63D /* ApiRepository.swift */; };
@@ -32,7 +34,6 @@
 		3DD5DF69251FD36E0010B63D /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */; };
 		3DD5DF6B251FD5D40010B63D /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */; };
 		3DD5DF6D251FD89D0010B63D /* MealDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */; };
-		3DD5DF70251FE0D70010B63D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF6F251FE0D70010B63D /* HomeRouter.swift */; };
 		3DD5DF73251FE1AF0010B63D /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF72251FE1AF0010B63D /* LoadingOverlay.swift */; };
 		3DD5DF75251FE1D10010B63D /* UIView+AddEmbeddedView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5DF74251FE1D10010B63D /* UIView+AddEmbeddedView.swift.swift */; };
 		3DE47D5E251FBB0D00D89C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */; };
@@ -59,6 +60,9 @@
 /* Begin PBXFileReference section */
 		15D80EE33A606DC02ABAACDC /* Pods_TheMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2507C06B709FDB9C02FA5346 /* Pods-TheMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMealTests.release.xcconfig"; path = "Target Support Files/Pods-TheMealTests/Pods-TheMealTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D98296125A7959000A0F1FC /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
+		3D98296725A7965200A0F1FC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		3D98297025A797B200A0F1FC /* MealsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCoordinator.swift; sourceTree = "<group>"; };
 		3DD5DF2C251FBE990010B63D /* Meals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meals.storyboard; sourceTree = "<group>"; };
 		3DD5DF2E251FBEBB0010B63D /* MealsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListViewController.swift; sourceTree = "<group>"; };
 		3DD5DF30251FBF0E0010B63D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
@@ -69,7 +73,6 @@
 		3DD5DF42251FC31A0010B63D /* MealsListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListItemViewModel.swift; sourceTree = "<group>"; };
 		3DD5DF44251FC4030010B63D /* UIImageView+LoadFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadFromUrl.swift"; sourceTree = "<group>"; };
 		3DD5DF47251FC9EB0010B63D /* MealsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListPresenter.swift; sourceTree = "<group>"; };
-		3DD5DF4A251FCAE50010B63D /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
 		3DD5DF4E251FCD080010B63D /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		3DD5DF50251FCD3D0010B63D /* HttpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRepository.swift; sourceTree = "<group>"; };
 		3DD5DF53251FCD7F0010B63D /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 		3DD5DF68251FD36E0010B63D /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		3DD5DF6A251FD5D40010B63D /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
 		3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsPresenter.swift; sourceTree = "<group>"; };
-		3DD5DF6F251FE0D70010B63D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		3DD5DF72251FE1AF0010B63D /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		3DD5DF74251FE1D10010B63D /* UIView+AddEmbeddedView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddEmbeddedView.swift.swift"; sourceTree = "<group>"; };
 		3DE47D5A251FBB0D00D89C96 /* TheMealDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMealDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,16 @@
 				15D80EE33A606DC02ABAACDC /* Pods_TheMealTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D98296025A7958200A0F1FC /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3D98296125A7959000A0F1FC /* InitialCoordinator.swift */,
+				3D98296725A7965200A0F1FC /* HomeCoordinator.swift */,
+				3D98297025A797B200A0F1FC /* MealsCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		3DD5DF36251FC0BF0010B63D /* Extensions */ = {
@@ -194,15 +206,6 @@
 				3DD5DF6C251FD89D0010B63D /* MealDetailsPresenter.swift */,
 			);
 			path = Presenters;
-			sourceTree = "<group>";
-		};
-		3DD5DF49251FCADB0010B63D /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-				3DD5DF4A251FCAE50010B63D /* MealsRouter.swift */,
-				3DD5DF6F251FE0D70010B63D /* HomeRouter.swift */,
-			);
-			path = Routers;
 			sourceTree = "<group>";
 		};
 		3DD5DF4C251FCCB20010B63D /* Network */ = {
@@ -291,6 +294,7 @@
 		3DE47D5C251FBB0D00D89C96 /* TheMeal */ = {
 			isa = PBXGroup;
 			children = (
+				3D98296025A7958200A0F1FC /* Coordinators */,
 				3DE47D6B251FBB0E00D89C96 /* Info.plist */,
 				3DE47D5D251FBB0D00D89C96 /* AppDelegate.swift */,
 				3DE47D5F251FBB0D00D89C96 /* SceneDelegate.swift */,
@@ -301,7 +305,6 @@
 				3DD5DF46251FC9DA0010B63D /* Presenters */,
 				3DD5DF37251FC0C40010B63D /* Protocols */,
 				3DD5DF5D251FCED00010B63D /* Repositories */,
-				3DD5DF49251FCADB0010B63D /* Routers */,
 				3DE47D80251FBE6300D89C96 /* Storyboards */,
 				3DE47D7F251FBE3900D89C96 /* ViewControllers */,
 				3DD5DF41251FC3070010B63D /* ViewModels */,
@@ -534,7 +537,7 @@
 				3DD5DF6D251FD89D0010B63D /* MealDetailsPresenter.swift in Sources */,
 				3DD5DF73251FE1AF0010B63D /* LoadingOverlay.swift in Sources */,
 				3DD5DF5F251FCEE50010B63D /* MealsRepository.swift in Sources */,
-				3DD5DF4B251FCAE50010B63D /* MealsRouter.swift in Sources */,
+				3D98296225A7959000A0F1FC /* InitialCoordinator.swift in Sources */,
 				3DD5DF51251FCD3D0010B63D /* HttpRepository.swift in Sources */,
 				3DD5DF3A251FC0EB0010B63D /* InstantiableFromStoryboard.swift in Sources */,
 				3DD5DF69251FD36E0010B63D /* MealDetailsViewController.swift in Sources */,
@@ -547,8 +550,9 @@
 				3DD5DF75251FE1D10010B63D /* UIView+AddEmbeddedView.swift.swift in Sources */,
 				3DD5DF65251FD0470010B63D /* MealsListResponse.swift in Sources */,
 				3DE47D60251FBB0D00D89C96 /* SceneDelegate.swift in Sources */,
+				3D98296825A7965200A0F1FC /* HomeCoordinator.swift in Sources */,
+				3D98297125A797B200A0F1FC /* MealsCoordinator.swift in Sources */,
 				3DD5DF6B251FD5D40010B63D /* MealDetailsViewModel.swift in Sources */,
-				3DD5DF70251FE0D70010B63D /* HomeRouter.swift in Sources */,
 				3DD5DF43251FC31A0010B63D /* MealsListItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
